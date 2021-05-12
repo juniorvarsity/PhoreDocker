@@ -1,4 +1,4 @@
-# ValidityDocker
+# PhoreDocker
 Create a docker container that can be used to build and run the Phore (https://phore.io//) client.  This is intended to allow an easy way to run the wallet on a Raspberry Pi (recommended Raspberry Pi 4 8GB), but could be useful to run on any 64-bit linux installation to not have to worry about dependencies of that exact OS.
 
 
