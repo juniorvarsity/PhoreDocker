@@ -1,4 +1,4 @@
-FROM ubuntu:bionic AS BaseOS
+FROM ubuntu:bionic AS baseos
 
 # install runtime libraries (Boost, QT5, event, ssl)
 # NOTE - use libssl1.0-dev to resolve incompatibility issue
@@ -21,7 +21,7 @@ RUN apt-get update && apt-get install -y \
   libssl1.0-dev
 
 # Stage to build Phore from source
-FROM BaseOS AS PhoreBuild
+FROM baseos AS phorebuild
 
 RUN mkdir /phore
 ENV BITCOIN_ROOT /phore
@@ -63,9 +63,9 @@ RUN make
 RUN make install
 
 # final stage, copy Phore runtime files and set to launch when running the image
-FROM BaseOS AS PhoreRuntime
+FROM baseos AS phoreruntime
 
-COPY --from=PhoreBuild /usr/local/bin/phore-* /usr/local/bin/
+COPY --from=phorebuild /usr/local/bin/phore-* /usr/local/bin/
 CMD ["/usr/local/bin/phore-qt"]
 
 
