@@ -7,7 +7,7 @@ Create a docker container that can be used to build and run the Phore (https://p
 * 64-bit OS installed on the Pi (currenlty using Ubuntu 21.04).  Recommended to run off an external USB hard drive and not a SD card.
 * Docker installed (https://docs.docker.com/engine/install/).  Note - Docker is included in Ubuntu 21.04.
 * x11docker installed (https://github.com/mviereck/x11docker#shortest-way-for-first-installation).
-* xclip to copy/paste into/out of the container: `sudo apg-get install xclip`
+* xclip to copy/paste into/out of the container: `sudo apt-get install xclip`
 
 ## Usage
 
